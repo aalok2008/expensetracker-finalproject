@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: spendwise
+    runtime: node
+    plan: starter
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: SPENDWISE_DATA_DIR
+        value: /var/data
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+    disk:
+      name: spendwise-data
+      mountPath: /var/data
+      sizeGB: 1

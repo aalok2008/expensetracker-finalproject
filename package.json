@@ -1,0 +1,18 @@
+{
+  "name": "spendwise-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Run SpendWise locally with Clerk authentication and a persistent local API.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@clerk/express": "^2.1.78",
+    "express": "^5.1.0"
+  }
+}
